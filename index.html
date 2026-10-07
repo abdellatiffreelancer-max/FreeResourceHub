@@ -1,773 +1,1079 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>FreeResourceHub | Tech, Gadgets & Product Reviews</title>
-
-  <meta name="description" content="Discover useful technology, gadgets, product reviews, comparisons and buying guides.">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f8fc;
-      color: #172033;
-      line-height: 1.6;
-    }
-
-    header {
-      background: white;
-      border-bottom: 1px solid #e8eaf0;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #4f46e5;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #172033;
-      margin-left: 20px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #4f46e5;
-    }
-
-    .button {
-      display: inline-block;
-      background: #4f46e5;
-      color: white !important;
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 9px;
-      font-weight: bold;
-    }
-
-    .hero {
-      background: white;
-      text-align: center;
-      padding: 75px 20px 65px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eef0ff;
-      color: #4f46e5;
-      padding: 7px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 48px;
-      line-height: 1.1;
-      max-width: 850px;
-      margin: 0 auto 20px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #5c667a;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .section {
-      padding: 65px 0;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .intro {
-      text-align: center;
-      color: #687286;
-      margin-bottom: 35px;
-    }
-
-    /* FEATURED PRODUCTS */
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .product {
-      background: white;
-      border: 1px solid #e7e9f0;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .product:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(23, 32, 51, 0.08);
-    }
-
-    .product-image {
-      height: 190px;
-      background: #eef0f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 60px;
-    }
-
-    .product-content {
-      padding: 22px;
-    }
-
-    .product-content h3 {
-      margin-bottom: 8px;
-      font-size: 20px;
-    }
-
-    .product-content p {
-      color: #687286;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .rating {
-      margin-bottom: 15px;
-      font-size: 14px;
-    }
-
-    .review-link {
-      display: inline-block;
-      text-decoration: none;
-      background: #172033;
-      color: white;
-      padding: 10px 17px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .review-link:hover {
-      background: #4f46e5;
-    }
-
-    /* CATEGORIES */
-
-    .categories-section {
-      background: white;
-    }
-
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .category {
-      background: #f7f8fc;
-      border: 1px solid #e7e9f0;
-      border-radius: 14px;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .category .icon {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .category h3 {
-      margin-bottom: 5px;
-    }
-
-    .category p {
-      color: #687286;
-      font-size: 14px;
-    }
-
-    /* GUIDES */
-
-    .guides-section {
-      padding: 65px 0;
-    }
-
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .guide-card {
-      background: white;
-      border: 1px solid #e7e9f0;
-      border-radius: 16px;
-      padding: 25px;
-    }
-
-    .guide-card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .guide-card p {
-      color: #687286;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    /* WHY US */
-
-    .why-us {
-      background: white;
-      border: 1px solid #e7e9f0;
-      border-radius: 18px;
-      padding: 40px;
-      margin-bottom: 60px;
-    }
-
-    .why-us h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      text-align: center;
-    }
-
-    .why-item h3 {
-      margin-bottom: 8px;
-    }
-
-    .why-item p {
-      color: #687286;
-      font-size: 14px;
-    }
-
-    /* CTA */
-
-    .cta {
-      background: #171d35;
-      color: white;
-      text-align: center;
-      padding: 55px 20px;
-      border-radius: 20px;
-      margin: 30px 0 60px;
-    }
-
-    .cta p {
-      color: #cbd0df;
-      margin: 10px auto 25px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      color: #7b8495;
-      padding: 30px 0;
-      font-size: 13px;
-    }
-
-    .footer-links {
-      margin-top: 12px;
-    }
-
-    .footer-links a {
-      color: #4f46e5;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: 600;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 800px) {
-
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .guide-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 42px;
-      }
-
-      nav a:not(.button) {
-        display: none;
-      }
-    }
-
-    @media (max-width: 500px) {
-
-      .categories,
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      .hero {
-        padding: 60px 15px;
-      }
-
-      .why-us {
-        padding: 25px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreeResourceHub | Tech, Gadgets & Product Reviews</title>
+
+    <meta name="description" content="FreeResourceHub provides technology reviews, product comparisons and buying guides to help you make better purchasing decisions.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* HEADER */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #374151;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            color: white;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            max-width: 850px;
+            margin: 0 auto 20px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #dbeafe;
+            font-size: 18px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            background: white;
+            color: #1d4ed8;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .hero-button:hover {
+            background: #eff6ff;
+        }
+
+        /* SECTION */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* ARTICLE GRID */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .article-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .article-icon {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .article-number {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .article-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .article-card p {
+            color: #6b7280;
+            font-size: 15px;
+            margin-bottom: 22px;
+            flex-grow: 1;
+        }
+
+        .read-button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 11px 17px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .read-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* CATEGORIES */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .category-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .category-card h3 {
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* WHY US */
+        .why-section {
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .why-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .why-card p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        /* CTA */
+        .cta {
+            background: #eff6ff;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .cta p {
+            color: #6b7280;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 25px;
+            background: #2563eb;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            padding: 45px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .article-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav {
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .article-grid,
+            .category-grid,
+            .why-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+    <!-- HEADER -->
+    <header>
+        <div class="container nav">
 
-  <header>
-
-    <div class="container">
-
-      <nav>
-
-        <div class="logo">
-          Free<span>Resource</span>Hub
-        </div>
-
-        <div>
-          <a href="#products">Products</a>
-          <a href="#guides">Guides</a>
-          <a href="#categories">Categories</a>
-        </div>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="badge">
-      TECHNOLOGY & GADGETS
-    </div>
-
-    <h1>
-      Discover Better Products Before You Buy
-    </h1>
-
-    <p>
-      Explore useful gadgets, technology products, reviews,
-      comparisons and buying guides to help you make better decisions.
-    </p>
-
-    <a href="#products" class="button">
-      Explore Our Reviews
-    </a>
-
-  </section>
-
-
-  <!-- FEATURED PRODUCTS -->
-
-  <section class="section" id="products">
-
-    <div class="container">
-
-      <h2>
-        Featured Product Guides
-      </h2>
-
-      <p class="intro">
-        Explore our latest product reviews and buying guides.
-      </p>
-
-      <div class="products">
-
-        <!-- WIRELESS EARBUDS -->
-
-        <div class="product">
-
-          <div class="product-image">
-            🎧
-          </div>
-
-          <div class="product-content">
-
-            <div class="rating">
-              ⭐⭐⭐⭐⭐
-            </div>
-
-            <h3>
-              Best Wireless Earbuds
-            </h3>
-
-            <p>
-              Compare popular wireless earbuds and discover
-              what to look for before buying.
-            </p>
-
-            <a href="wireless-earbuds-2026.html" class="review-link">
-              Read Review
+            <a href="index.html" class="logo">
+                Free<span>ResourceHub</span>
             </a>
 
-          </div>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#guides">Guides</a>
+                <a href="#categories">Categories</a>
+            </nav>
 
         </div>
+    </header>
 
 
-        <!-- BUDGET SMARTPHONES -->
+    <!-- HERO -->
+    <section class="hero">
 
-        <div class="product">
+        <div class="container">
 
-          <div class="product-image">
-            📱
-          </div>
-
-          <div class="product-content">
-
-            <div class="rating">
-              ⭐⭐⭐⭐⭐
+            <div class="hero-badge">
+                TECHNOLOGY & GADGETS
             </div>
 
-            <h3>
-              Best Budget Smartphones
-            </h3>
+            <h1>
+                Discover Better Products Before You Buy
+            </h1>
 
             <p>
-              Explore budget-friendly smartphone options and
-              compare their key features and value.
+                Explore useful gadgets, technology products, reviews,
+                comparisons and buying guides to help you make better
+                purchasing decisions.
             </p>
 
-            <a href="best-budget-smartphones-2026.html" class="review-link">
-              Read Guide
+            <a href="#products" class="hero-button">
+                Explore Our Reviews
             </a>
-
-          </div>
 
         </div>
 
+    </section>
 
-        <!-- SMART WATCHES -->
 
-        <div class="product">
+    <!-- ALL PRODUCTS / ARTICLES -->
+    <section id="products">
 
-          <div class="product-image">
-            ⌚
-          </div>
+        <div class="container">
 
-          <div class="product-content">
+            <div class="section-title">
+                <h2>Featured Product Guides</h2>
 
-            <div class="rating">
-              ⭐⭐⭐⭐☆
+                <p>
+                    Explore our latest technology reviews, product
+                    comparisons and buying guides.
+                </p>
             </div>
 
-            <h3>
-              Best Smartwatches
-            </h3>
+
+            <div class="article-grid">
+
+                <!-- 1 -->
+                <article class="article-card">
+
+                    <div class="article-icon">🎧</div>
+
+                    <div class="article-number">
+                        Guide 01
+                    </div>
+
+                    <h3>
+                        Best Wireless Earbuds 2026
+                    </h3>
+
+                    <p>
+                        Compare popular wireless earbuds and discover
+                        what to look for before buying.
+                    </p>
+
+                    <a href="wireless-earbuds-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 2 -->
+                <article class="article-card">
+
+                    <div class="article-icon">📱</div>
+
+                    <div class="article-number">
+                        Guide 02
+                    </div>
+
+                    <h3>
+                        Best Budget Smartphones 2026
+                    </h3>
+
+                    <p>
+                        Explore budget-friendly smartphone options
+                        and compare their key features and value.
+                    </p>
+
+                    <a href="best-budget-smartphones-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 3 -->
+                <article class="article-card">
+
+                    <div class="article-icon">⌚</div>
+
+                    <div class="article-number">
+                        Guide 03
+                    </div>
+
+                    <h3>
+                        Best Smartwatches 2026
+                    </h3>
+
+                    <p>
+                        Compare popular smartwatch options and learn
+                        which features matter before choosing one.
+                    </p>
+
+                    <a href="best-smartwatches-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 4 -->
+                <article class="article-card">
+
+                    <div class="article-icon">💻</div>
+
+                    <div class="article-number">
+                        Guide 04
+                    </div>
+
+                    <h3>
+                        Best Laptops for Students 2026
+                    </h3>
+
+                    <p>
+                        Discover practical laptops for students,
+                        studying, productivity and everyday use.
+                    </p>
+
+                    <a href="best-laptops-for-students-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 5 -->
+                <article class="article-card">
+
+                    <div class="article-icon">🔊</div>
+
+                    <div class="article-number">
+                        Guide 05
+                    </div>
+
+                    <h3>
+                        Best Bluetooth Speakers 2026
+                    </h3>
+
+                    <p>
+                        Compare portable Bluetooth speakers for sound,
+                        battery life, portability and everyday use.
+                    </p>
+
+                    <a href="best-bluetooth-speakers-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 6 -->
+                <article class="article-card">
+
+                    <div class="article-icon">🔋</div>
+
+                    <div class="article-number">
+                        Guide 06
+                    </div>
+
+                    <h3>
+                        Best Power Banks 2026
+                    </h3>
+
+                    <p>
+                        Find useful power banks for smartphones,
+                        tablets, laptops and travel.
+                    </p>
+
+                    <a href="best-power-banks-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 7 -->
+                <article class="article-card">
+
+                    <div class="article-icon">🎧</div>
+
+                    <div class="article-number">
+                        Guide 07
+                    </div>
+
+                    <h3>
+                        Best Wireless Headphones 2026
+                    </h3>
+
+                    <p>
+                        Compare premium wireless headphones for
+                        sound quality, comfort and noise cancellation.
+                    </p>
+
+                    <a href="best-wireless-headphones-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 8 -->
+                <article class="article-card">
+
+                    <div class="article-icon">📲</div>
+
+                    <div class="article-number">
+                        Guide 08
+                    </div>
+
+                    <h3>
+                        Best Tablets for Students 2026
+                    </h3>
+
+                    <p>
+                        Explore tablets suitable for studying,
+                        note-taking, productivity and entertainment.
+                    </p>
+
+                    <a href="best-tablets-for-students-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 9 -->
+                <article class="article-card">
+
+                    <div class="article-icon">🏠</div>
+
+                    <div class="article-number">
+                        Guide 09
+                    </div>
+
+                    <h3>
+                        Best Smart Home Devices 2026
+                    </h3>
+
+                    <p>
+                        Discover useful smart home devices for
+                        lighting, automation, security and convenience.
+                    </p>
+
+                    <a href="best-smart-home-devices-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <!-- 10 -->
+                <article class="article-card">
+
+                    <div class="article-icon">🎮</div>
+
+                    <div class="article-number">
+                        Guide 10
+                    </div>
+
+                    <h3>
+                        Best Gaming Accessories 2026
+                    </h3>
+
+                    <p>
+                        Compare gaming mice, keyboards, headsets,
+                        controllers and other useful gaming accessories.
+                    </p>
+
+                    <a href="best-gaming-accessories-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUYING GUIDES -->
+    <section id="guides" class="why-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Latest Buying Guides</h2>
+
+                <p>
+                    Practical information to help you research
+                    technology products before making a purchase.
+                </p>
+
+            </div>
+
+
+            <div class="article-grid">
+
+                <article class="article-card">
+
+                    <div class="article-icon">🎧</div>
+
+                    <h3>
+                        Wireless Earbuds Guide
+                    </h3>
+
+                    <p>
+                        Learn about sound quality, battery life,
+                        comfort, noise cancellation and other important
+                        features.
+                    </p>
+
+                    <a href="wireless-earbuds-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <div class="article-icon">📱</div>
+
+                    <h3>
+                        Budget Smartphone Guide
+                    </h3>
+
+                    <p>
+                        Understand what to look for when choosing
+                        a smartphone without overspending.
+                    </p>
+
+                    <a href="best-budget-smartphones-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <div class="article-icon">💻</div>
+
+                    <h3>
+                        Student Laptop Guide
+                    </h3>
+
+                    <p>
+                        Compare important laptop features for
+                        studying, productivity and everyday tasks.
+                    </p>
+
+                    <a href="best-laptops-for-students-2026.html" class="read-button">
+                        Read Guide
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section id="categories">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Explore Categories</h2>
+
+                <p>
+                    Discover technology products across different
+                    categories.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <div class="category-card">
+
+                    <div class="category-icon">📱</div>
+
+                    <h3>Smartphones</h3>
+
+                    <p>
+                        Phones and useful mobile technology.
+                    </p>
+
+                </div>
+
+
+                <div class="category-card">
+
+                    <div class="category-icon">🎧</div>
+
+                    <h3>Audio</h3>
+
+                    <p>
+                        Headphones, earbuds and audio equipment.
+                    </p>
+
+                </div>
+
+
+                <div class="category-card">
+
+                    <div class="category-icon">💻</div>
+
+                    <h3>Computing</h3>
+
+                    <p>
+                        Laptops, tablets and computer accessories.
+                    </p>
+
+                </div>
+
+
+                <div class="category-card">
+
+                    <div class="category-icon">🏠</div>
+
+                    <h3>Smart Home</h3>
+
+                    <p>
+                        Useful gadgets and technology for your home.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+    <section class="why-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Why FreeResourceHub?</h2>
+
+                <p>
+                    Our goal is to make product research simpler
+                    and more useful.
+                </p>
+
+            </div>
+
+
+            <div class="why-grid">
+
+                <div class="why-card">
+
+                    <div class="why-icon">📚</div>
+
+                    <h3>
+                        Simple Information
+                    </h3>
+
+                    <p>
+                        We explain product features in a clear
+                        and easy-to-understand way.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">⚖️</div>
+
+                    <h3>
+                        Product Comparisons
+                    </h3>
+
+                    <p>
+                        We compare important features to make
+                        product research easier.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">✅</div>
+
+                    <h3>
+                        Better Decisions
+                    </h3>
+
+                    <p>
+                        Our buying guides help readers understand
+                        products before making a purchase.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Find the Right Product for You
+            </h2>
 
             <p>
-              Compare popular smartwatch series and learn which
-              features matter before choosing one.
+                Explore our reviews, comparisons and technology
+                buying guides to make better-informed decisions.
             </p>
 
-            <a href="best-smartwatches-2026.html" class="review-link">
-              Read Review
+            <a href="#products" class="cta-button">
+                Explore All Guides
             </a>
 
-          </div>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h3>
+                        FreeResourceHub
+                    </h3>
+
+                    <p>
+                        Technology reviews, product comparisons
+                        and buying guides designed to help readers
+                        research products before buying.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Website
+                    </h3>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+                            Home
+                        </a>
+
+                        <a href="#products">
+                            Products
+                        </a>
+
+                        <a href="#guides">
+                            Guides
+                        </a>
+
+                        <a href="#categories">
+                            Categories
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Information
+                    </h3>
+
+                    <div class="footer-links">
+
+                        <a href="about.html">
+                            About Us
+                        </a>
+
+                        <a href="privacy-policy.html">
+                            Privacy Policy
+                        </a>
+
+                        <a href="affiliate-disclosure.html">
+                            Affiliate Disclosure
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                <p>
+                    © 2026 FreeResourceHub. All rights reserved.
+                </p>
+
+                <p>
+                    Product information is provided for informational purposes.
+                </p>
+
+            </div>
 
         </div>
 
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- BUYING GUIDES -->
-
-  <section class="guides-section" id="guides">
-
-    <div class="container">
-
-      <h2>
-        Latest Buying Guides
-      </h2>
-
-      <p class="intro">
-        Practical information to help you make smarter technology purchases.
-      </p>
-
-      <div class="guide-grid">
-
-        <div class="guide-card">
-
-          <h3>
-            Wireless Earbuds Guide
-          </h3>
-
-          <p>
-            Learn about important features such as sound quality,
-            battery life, comfort and noise cancellation.
-          </p>
-
-          <a href="wireless-earbuds-2026.html" class="review-link">
-            Read Guide
-          </a>
-
-        </div>
-
-
-        <div class="guide-card">
-
-          <h3>
-            Budget Smartphone Guide
-          </h3>
-
-          <p>
-            Understand what to look for when choosing a smartphone
-            without spending too much.
-          </p>
-
-          <a href="best-budget-smartphones-2026.html" class="review-link">
-            Read Guide
-          </a>
-
-        </div>
-
-
-        <div class="guide-card">
-
-          <h3>
-            Smartwatch Guide
-          </h3>
-
-          <p>
-            Compare important smartwatch features and find the right
-            type of device for your needs.
-          </p>
-
-          <a href="best-smartwatches-2026.html" class="review-link">
-            Read Guide
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CATEGORIES -->
-
-  <section class="section categories-section" id="categories">
-
-    <div class="container">
-
-      <h2>
-        Explore Categories
-      </h2>
-
-      <p class="intro">
-        Discover technology products across different categories.
-      </p>
-
-      <div class="categories">
-
-        <div class="category">
-          <div class="icon">📱</div>
-          <h3>Smartphones</h3>
-          <p>Phones, accessories and useful mobile technology.</p>
-        </div>
-
-        <div class="category">
-          <div class="icon">🎧</div>
-          <h3>Audio</h3>
-          <p>Headphones, earbuds and audio equipment.</p>
-        </div>
-
-        <div class="category">
-          <div class="icon">💻</div>
-          <h3>Computing</h3>
-          <p>Laptops, accessories and useful computer products.</p>
-        </div>
-
-        <div class="category">
-          <div class="icon">🏠</div>
-          <h3>Smart Home</h3>
-          <p>Useful gadgets and technology for your home.</p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WHY FREERESOURCEHUB -->
-
-  <section class="container">
-
-    <div class="why-us">
-
-      <h2>
-        Why FreeResourceHub?
-      </h2>
-
-      <div class="why-grid">
-
-        <div class="why-item">
-
-          <h3>
-            Simple Information
-          </h3>
-
-          <p>
-            We explain product features in a clear and easy-to-understand way.
-          </p>
-
-        </div>
-
-
-        <div class="why-item">
-
-          <h3>
-            Product Comparisons
-          </h3>
-
-          <p>
-            We compare important features to make product research easier.
-          </p>
-
-        </div>
-
-
-        <div class="why-item">
-
-          <h3>
-            Better Decisions
-          </h3>
-
-          <p>
-            Our guides help readers understand products before making a purchase.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-
-  <section class="container">
-
-    <div class="cta">
-
-      <h2>
-        Find the Right Product for You
-      </h2>
-
-      <p>
-        Explore our reviews, comparisons and technology guides.
-      </p>
-
-      <a href="#products" class="button">
-        Explore Reviews
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="container">
-
-      <p>
-        © 2026 FreeResourceHub. All rights reserved.
-      </p>
-
-      <p>
-        Product information is provided for informational purposes.
-      </p>
-
-      <div class="footer-links">
-        <a href="about.html">About Us</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
-      </div>
-
-    </div>
-
-  </footer>
+    </footer>
 
 </body>
 </html>
