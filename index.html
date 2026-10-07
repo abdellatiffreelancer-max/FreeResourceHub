@@ -60,6 +60,10 @@
       font-size: 14px;
     }
 
+    nav a:hover {
+      color: #4f46e5;
+    }
+
     .button {
       display: inline-block;
       background: #4f46e5;
@@ -73,7 +77,7 @@
     .hero {
       background: white;
       text-align: center;
-      padding: 90px 20px 80px;
+      padding: 75px 20px 65px;
     }
 
     .badge {
@@ -88,7 +92,7 @@
     }
 
     h1 {
-      font-size: 52px;
+      font-size: 48px;
       line-height: 1.1;
       max-width: 850px;
       margin: 0 auto 20px;
@@ -103,7 +107,7 @@
     }
 
     .section {
-      padding: 70px 0;
+      padding: 65px 0;
     }
 
     .section h2 {
@@ -115,37 +119,10 @@
     .intro {
       text-align: center;
       color: #687286;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-bottom: 60px;
-    }
-
-    .category {
-      background: white;
-      border: 1px solid #e7e9f0;
-      border-radius: 14px;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .category .icon {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .category h3 {
-      margin-bottom: 5px;
-    }
-
-    .category p {
-      color: #687286;
-      font-size: 14px;
-    }
+    /* FEATURED PRODUCTS */
 
     .products {
       display: grid;
@@ -158,6 +135,12 @@
       border: 1px solid #e7e9f0;
       border-radius: 16px;
       overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(23, 32, 51, 0.08);
     }
 
     .product-image {
@@ -200,23 +183,106 @@
       font-weight: bold;
     }
 
-    .guide {
+    .review-link:hover {
+      background: #4f46e5;
+    }
+
+    /* CATEGORIES */
+
+    .categories-section {
       background: white;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .category {
+      background: #f7f8fc;
+      border: 1px solid #e7e9f0;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .category .icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .category h3 {
+      margin-bottom: 5px;
+    }
+
+    .category p {
+      color: #687286;
+      font-size: 14px;
+    }
+
+    /* GUIDES */
+
+    .guides-section {
+      padding: 65px 0;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .guide-card {
+      background: white;
+      border: 1px solid #e7e9f0;
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .guide-card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .guide-card p {
+      color: #687286;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    /* WHY US */
+
+    .why-us {
+      background: white;
+      border: 1px solid #e7e9f0;
       border-radius: 18px;
       padding: 40px;
-      border: 1px solid #e7e9f0;
-      margin-top: 60px;
+      margin-bottom: 60px;
     }
 
-    .guide h2 {
-      text-align: left;
-      margin-bottom: 12px;
+    .why-us h2 {
+      text-align: center;
+      margin-bottom: 25px;
     }
 
-    .guide p {
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .why-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .why-item p {
       color: #687286;
-      margin-bottom: 20px;
+      font-size: 14px;
     }
+
+    /* CTA */
 
     .cta {
       background: #171d35;
@@ -231,6 +297,8 @@
       color: #cbd0df;
       margin: 10px auto 25px;
     }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
@@ -254,6 +322,8 @@
       text-decoration: underline;
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 800px) {
 
       .categories {
@@ -262,6 +332,14 @@
 
       .products {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
       }
 
       h1 {
@@ -285,10 +363,10 @@
       }
 
       .hero {
-        padding: 65px 15px;
+        padding: 60px 15px;
       }
 
-      .guide {
+      .why-us {
         padding: 25px;
       }
     }
@@ -310,9 +388,9 @@
         </div>
 
         <div>
-          <a href="#categories">Categories</a>
           <a href="#products">Products</a>
           <a href="#guides">Guides</a>
+          <a href="#categories">Categories</a>
         </div>
 
       </nav>
@@ -340,15 +418,209 @@
     </p>
 
     <a href="#products" class="button">
-      Explore Products
+      Explore Our Reviews
     </a>
+
+  </section>
+
+
+  <!-- FEATURED PRODUCTS -->
+
+  <section class="section" id="products">
+
+    <div class="container">
+
+      <h2>
+        Featured Product Guides
+      </h2>
+
+      <p class="intro">
+        Explore our latest product reviews and buying guides.
+      </p>
+
+      <div class="products">
+
+        <!-- WIRELESS EARBUDS -->
+
+        <div class="product">
+
+          <div class="product-image">
+            🎧
+          </div>
+
+          <div class="product-content">
+
+            <div class="rating">
+              ⭐⭐⭐⭐⭐
+            </div>
+
+            <h3>
+              Best Wireless Earbuds
+            </h3>
+
+            <p>
+              Compare popular wireless earbuds and discover
+              what to look for before buying.
+            </p>
+
+            <a href="wireless-earbuds-2026.html" class="review-link">
+              Read Review
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUDGET SMARTPHONES -->
+
+        <div class="product">
+
+          <div class="product-image">
+            📱
+          </div>
+
+          <div class="product-content">
+
+            <div class="rating">
+              ⭐⭐⭐⭐⭐
+            </div>
+
+            <h3>
+              Best Budget Smartphones
+            </h3>
+
+            <p>
+              Explore budget-friendly smartphone options and
+              compare their key features and value.
+            </p>
+
+            <a href="best-budget-smartphones-2026.html" class="review-link">
+              Read Guide
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- SMART WATCHES -->
+
+        <div class="product">
+
+          <div class="product-image">
+            ⌚
+          </div>
+
+          <div class="product-content">
+
+            <div class="rating">
+              ⭐⭐⭐⭐☆
+            </div>
+
+            <h3>
+              Best Smartwatches
+            </h3>
+
+            <p>
+              Compare popular smartwatch series and learn which
+              features matter before choosing one.
+            </p>
+
+            <a href="best-smartwatches-2026.html" class="review-link">
+              Read Review
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BUYING GUIDES -->
+
+  <section class="guides-section" id="guides">
+
+    <div class="container">
+
+      <h2>
+        Latest Buying Guides
+      </h2>
+
+      <p class="intro">
+        Practical information to help you make smarter technology purchases.
+      </p>
+
+      <div class="guide-grid">
+
+        <div class="guide-card">
+
+          <h3>
+            Wireless Earbuds Guide
+          </h3>
+
+          <p>
+            Learn about important features such as sound quality,
+            battery life, comfort and noise cancellation.
+          </p>
+
+          <a href="wireless-earbuds-2026.html" class="review-link">
+            Read Guide
+          </a>
+
+        </div>
+
+
+        <div class="guide-card">
+
+          <h3>
+            Budget Smartphone Guide
+          </h3>
+
+          <p>
+            Understand what to look for when choosing a smartphone
+            without spending too much.
+          </p>
+
+          <a href="best-budget-smartphones-2026.html" class="review-link">
+            Read Guide
+          </a>
+
+        </div>
+
+
+        <div class="guide-card">
+
+          <h3>
+            Smartwatch Guide
+          </h3>
+
+          <p>
+            Compare important smartwatch features and find the right
+            type of device for your needs.
+          </p>
+
+          <a href="best-smartwatches-2026.html" class="review-link">
+            Read Guide
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </section>
 
 
   <!-- CATEGORIES -->
 
-  <section class="section" id="categories">
+  <section class="section categories-section" id="categories">
 
     <div class="container">
 
@@ -357,9 +629,8 @@
       </h2>
 
       <p class="intro">
-        Discover useful products and information across different categories.
+        Discover technology products across different categories.
       </p>
-
 
       <div class="categories">
 
@@ -394,177 +665,57 @@
   </section>
 
 
-  <!-- PRODUCTS -->
+  <!-- WHY FREERESOURCEHUB -->
 
-  <section class="section" id="products">
+  <section class="container">
 
-    <div class="container">
+    <div class="why-us">
 
       <h2>
-        Featured Products
+        Why FreeResourceHub?
       </h2>
 
-      <p class="intro">
-        Product reviews and recommendations coming soon.
-      </p>
+      <div class="why-grid">
 
+        <div class="why-item">
 
-      <div class="products">
+          <h3>
+            Simple Information
+          </h3>
 
-
-        <!-- WIRELESS EARBUDS -->
-
-        <div class="product">
-
-          <div class="product-image">
-            🎧
-          </div>
-
-          <div class="product-content">
-
-            <div class="rating">
-              ⭐⭐⭐⭐⭐
-            </div>
-
-            <h3>
-              Wireless Earbuds
-            </h3>
-
-            <p>
-              A practical guide to choosing wireless earbuds
-              for everyday use.
-            </p>
-
-            <a href="wireless-earbuds-2026.html" class="review-link">
-              Read Review
-            </a>
-
-          </div>
+          <p>
+            We explain product features in a clear and easy-to-understand way.
+          </p>
 
         </div>
 
 
-        <!-- BUDGET SMARTPHONES -->
+        <div class="why-item">
 
-        <div class="product">
+          <h3>
+            Product Comparisons
+          </h3>
 
-          <div class="product-image">
-            📱
-          </div>
-
-          <div class="product-content">
-
-            <div class="rating">
-              ⭐⭐⭐⭐⭐
-            </div>
-
-            <h3>
-              Budget Smartphones
-            </h3>
-
-            <p>
-              A practical guide to choosing a budget smartphone
-              with good performance and value.
-            </p>
-
-            <a href="best-budget-smartphones-2026.html" class="review-link">
-              Read Guide
-            </a>
-
-          </div>
+          <p>
+            We compare important features to make product research easier.
+          </p>
 
         </div>
 
 
-        <!-- SMART WATCHES -->
+        <div class="why-item">
 
-        <div class="product">
+          <h3>
+            Better Decisions
+          </h3>
 
-          <div class="product-image">
-            ⌚
-          </div>
-
-          <div class="product-content">
-
-            <div class="rating">
-              ⭐⭐⭐⭐☆
-            </div>
-
-            <h3>
-              Smart Watches
-            </h3>
-
-            <p>
-              Compare useful features before choosing
-              your next smartwatch.
-            </p>
-
-            <a href="best-smartwatches-2026.html" class="review-link">
-              Read Review
-            </a>
-
-          </div>
+          <p>
+            Our guides help readers understand products before making a purchase.
+          </p>
 
         </div>
-
-
-        <!-- SMARTPHONE ACCESSORIES -->
-
-        <div class="product">
-
-          <div class="product-image">
-            📱
-          </div>
-
-          <div class="product-content">
-
-            <div class="rating">
-              ⭐⭐⭐⭐⭐
-            </div>
-
-            <h3>
-              Smartphone Accessories
-            </h3>
-
-            <p>
-              Discover useful accessories that can improve
-              your smartphone experience.
-            </p>
-
-            <a href="#" class="review-link">
-              Read Review
-            </a>
-
-          </div>
-
-        </div>
-
 
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- BUYING GUIDE -->
-
-  <section class="container" id="guides">
-
-    <div class="guide">
-
-      <h2>
-        Buying Guides
-      </h2>
-
-      <p>
-        We create simple guides and comparisons to help you
-        understand products before making a purchase.
-      </p>
-
-      <a href="#" class="button">
-        Explore Guides
-      </a>
 
     </div>
 
@@ -586,7 +737,7 @@
       </p>
 
       <a href="#products" class="button">
-        Explore Now
+        Explore Reviews
       </a>
 
     </div>
